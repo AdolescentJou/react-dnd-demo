@@ -1,0 +1,56 @@
+.word-container {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+
+  .word_drop_group {
+    width: 700px;
+    height: 340px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    .word_drop_container {
+      width: 320px;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+
+      .word_drop_text {
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+      }
+
+      .word_drop {
+        width: 320px;
+        height: 320px;
+        border: 1px solid black;
+      }
+    }
+  }
+
+  .word_drag_group {
+    margin-top: 200px;
+    width: 700px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    border: 1px solid black;
+
+    .word_drag {
+      padding: 24px;
+      font-size: 18px;
+      border: 1px solid black;
+      position: relative;
+    }
+
+    .word_drag+.word_drag{
+      margin-left: 20px;
+    }
+  }
+}
