@@ -3,6 +3,7 @@ import './App.scss';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import ChessDemo from './Chess';
 import WordClassification from './wordClassification';
+import CardSort from './cardSort';
 
 function App({ ...props }) {
   return (
@@ -10,7 +11,8 @@ function App({ ...props }) {
       <Router>
         <Routes>
           <Route path={'/chess'} element={<ChessDemo />} />
-          <Route path={'/'} element={<WordClassification />} />
+          <Route path={'/word'} element={<WordClassification />} />
+          <Route path={'/'} element={<CardSort />} />
         </Routes>
       </Router>
     </div>
