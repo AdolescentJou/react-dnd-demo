@@ -4,7 +4,7 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import ChessDemo from './Chess';
 import WordClassification from './wordClassification';
 import CardSort from './cardSort';
-import DragCarSort from './dragCardSort';
+import DragCardSort from './dragCardSort';
 
 function App({ ...props }) {
   return (
@@ -14,7 +14,7 @@ function App({ ...props }) {
           <Route path={'/chess'} element={<ChessDemo />} />
           <Route path={'/word'} element={<WordClassification />} />
           <Route path={'/cardSort'} element={<CardSort />} />
-          <Route path={'/'} element={<DragCarSort />} />
+          <Route path={'/dragCardSort'} element={<DragCardSort />} />
         </Routes>
       </Router>
     </div>
