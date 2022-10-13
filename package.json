@@ -10,6 +10,7 @@
     "@types/node": "^16.11.47",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "immutability-helper": "^3.1.1",
     "iscroll": "^5.2.0",
     "node-sass": "^7.0.3",
     "react": "^18.2.0",

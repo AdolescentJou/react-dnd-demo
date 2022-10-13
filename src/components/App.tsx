@@ -2,9 +2,10 @@ import React from 'react';
 import './App.scss';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import ChessDemo from './Chess';
-import WordClassification from './wordClassification';
+import WordClassification from './arbitrarilyDrag';
 import CardSort from './cardSort';
-import DragCardSort from './dragCardSort';
+import DragCardSort from './cardAssemb';
+import DragCardMove from './listSort';
 
 function App({ ...props }) {
   return (
@@ -15,6 +16,7 @@ function App({ ...props }) {
           <Route path={'/word'} element={<WordClassification />} />
           <Route path={'/cardSort'} element={<CardSort />} />
           <Route path={'/dragCardSort'} element={<DragCardSort />} />
+          <Route path={'/'} element={<DragCardMove />} />
         </Routes>
       </Router>
     </div>
