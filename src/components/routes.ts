@@ -18,7 +18,7 @@ export const routes = [
   },
   {
     url: '/cardSort',
-    title: '卡片排序',
+    title: '预置卡片排序',
     Component: CardSort,
   },
   {

@@ -53,7 +53,7 @@ class CardSort extends React.Component<any, any> {
     return (
       <DndProvider backend={HTML5Backend}>
         <div className='card-container'>
-          <h2>预放置卡片排序</h2>
+          <h2>预置卡片排序</h2>
           <div className='card_drag_group'>
             {this.state.cardList.map((each: any, index: any) => (
               <Card changePosition={this.changePosition} index={index} {...each} key={'drag_card' + index} />

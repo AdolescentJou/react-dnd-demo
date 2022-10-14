@@ -33,7 +33,7 @@ class CardSort extends React.Component<any, any> {
     return (
       <DndProvider backend={HTML5Backend}>
         <div className='scard-move-container'>
-          <h2>拖拽卡片排序(数量无限，有顺移)</h2>
+          <h2>列表排序(数量无限，有顺移)</h2>
           <DropSquare dragCardList={dragCardList} dropCardList={dropCardList} updateDragAndDrop={this.updateDragAndDrop} />
           <DragSquare dropCardList={dropCardList} dragCardList={dragCardList} updateDragAndDrop={this.updateDragAndDrop} />
         </div>

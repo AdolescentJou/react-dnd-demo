@@ -3,17 +3,12 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { routes } from '../../routes';
 import './index.scss';
 
-const initUrl = '/listSort';
 const Nav = () => {
   let navigate = useNavigate();
   let location = useLocation();
   const handleChangeRoute = (url: string) => {
     navigate(url);
   };
-
-  useEffect(() => {
-    navigate(initUrl);
-  }, []);
 
   return (
     <div className='nav-container'>
