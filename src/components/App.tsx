@@ -6,7 +6,8 @@ import ArbitrarilyDrag from './arbitrarilyDrag';
 import CardSort from './cardSort';
 import CardAssemble from './cardAssemble';
 import ListSort from './listSort';
-import DragPreview from './dragPreview';
+import DragPreviewImg from './dragPreviewImg';
+import DragPreviewDom from './dragPreviewDom';
 
 function App({ ...props }) {
   return (
@@ -18,7 +19,8 @@ function App({ ...props }) {
           <Route path={'/cardSort'} element={<CardSort />} />
           <Route path={'/dragCardSort'} element={<CardAssemble />} />
           <Route path={'/listSort'} element={<ListSort />} />
-          <Route path={'/'} element={<DragPreview />} />
+          <Route path={'/dragPreviewImg'} element={<DragPreviewImg />} />
+          <Route path={'/'} element={<DragPreviewDom/>} />
         </Routes>
       </Router>
     </div>

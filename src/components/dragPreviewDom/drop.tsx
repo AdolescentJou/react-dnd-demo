@@ -6,16 +6,6 @@ export default function Drop() {
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
-    drop(item: any, monitor) {
-      const delta = monitor.getDifferenceFromInitialOffset() as {
-        x: number;
-        y: number;
-      };
-
-      let left = Math.round(item.left + delta.x);
-      let top = Math.round(item.top + delta.y);
-      return { left, top };
-    },
   });
 
   return (
