@@ -5,6 +5,7 @@ import CardAssemble from './cardAssemble';
 import ListSort from './listSort';
 import DragPreviewImg from './dragPreviewImg';
 import DragPreviewDom from './dragPreviewDom';
+import MultiDrag from './multiDrag';
 export const routes = [
   {
     url: '/chess',
@@ -40,5 +41,10 @@ export const routes = [
     url: '/dragPreviewDom',
     title: '自定义预览',
     Component: DragPreviewDom,
+  },
+  {
+    url: '/multiDrg',
+    title: '批量拖拽',
+    Component: MultiDrag,
   },
 ];
