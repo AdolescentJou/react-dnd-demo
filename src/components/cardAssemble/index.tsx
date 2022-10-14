@@ -8,23 +8,23 @@ import './index.scss';
 const CARD_INIT_ARR = [
   {
     id: 1,
-    text: '000',
+    text: '她',
   },
   {
     id: 2,
-    text: '111',
+    text: '我的',
   },
   {
     id: 3,
-    text: '222',
+    text: '唯一',
   },
   {
     id: 4,
-    text: '333',
+    text: '是',
   },
   {
     id: 5,
-    text: '444',
+    text: '现在',
   },
 ];
 
@@ -51,11 +51,7 @@ class CardSort extends React.Component<any, any> {
     let moveDragItem: any = null;
     if (!dropId) {
       if (dragCardList.length === 5) return;
-
-      [moveDragItem, dropCardList] = this.removeDropItemById(dragId, dropCardList);
-
-      dragCardList.push(moveDragItem);
-      dragCardList = dragCardList.sort((pre: any, next: any) => pre.id - next.id);
+      this.dragItemBack(dragId);
     } else {
       let beginDragId = -1;
       [moveDragItem, dragCardList] = this.removeDragItemById(dragId, dragCardList);
@@ -73,10 +69,22 @@ class CardSort extends React.Component<any, any> {
         }
         return item;
       });
+      this.setState({ dragCardList, dropCardList });
     }
+  }
+
+  // 从drop列表将drag拖拽回去
+  dragItemBack(dragId: number) {
+    let { dragCardList, dropCardList } = this.state;
+    let moveDragItem = null;
+    [moveDragItem, dropCardList] = this.removeDropItemById(dragId, dropCardList);
+
+    dragCardList.push(moveDragItem);
+    dragCardList = dragCardList.sort((pre: any, next: any) => pre.id - next.id);
     this.setState({ dragCardList, dropCardList });
   }
 
+  // 根据id从drop列表中删除drop
   removeDropItemById(itemId: any, dropCardList: any) {
     let moveDragItem: any = null;
     let dropId = -1;
@@ -91,6 +99,7 @@ class CardSort extends React.Component<any, any> {
     return [moveDragItem, newDropCardList, dropId];
   }
 
+  // 根据id从drag列表中删除drag
   removeDragItemById(itemId: any, dragCardList: any) {
     let moveDragItem: any = null;
     dragCardList = dragCardList.filter((item: any) => {
@@ -108,7 +117,7 @@ class CardSort extends React.Component<any, any> {
     return (
       <DndProvider backend={HTML5Backend}>
         <div className='scard-container'>
-          <h2>拖拽卡片排序</h2>
+          <h2>卡片拼图</h2>
           <DropSquare dropCardList={dropCardList} updateDragAndDrop={this.updateDragAndDrop} />
           <DragSquare dragCardList={dragCardList} updateDragAndDrop={this.updateDragAndDrop} />
         </div>

@@ -46,7 +46,7 @@ class WordClassification extends React.Component {
     return (
       <DndProvider backend={HTML5Backend}>
         <div className='word-container'>
-          <h2>词语分类</h2>
+          <h2>任意拖拽</h2>
           <div className='word_drop_group'>
             {Classifications.map((each, index) => (
               <Classification {...each} key={'classification' + index} />

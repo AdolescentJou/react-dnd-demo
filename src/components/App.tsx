@@ -1,26 +1,19 @@
 import React from 'react';
 import './App.scss';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import Chess from './Chess';
-import ArbitrarilyDrag from './arbitrarilyDrag';
-import CardSort from './cardSort';
-import CardAssemble from './cardAssemble';
-import ListSort from './listSort';
-import DragPreviewImg from './dragPreviewImg';
-import DragPreviewDom from './dragPreviewDom';
+import { routes } from './routes';
+import Nav from './base/nav';
 
 function App({ ...props }) {
   return (
     <div className='app'>
       <Router>
+      <Nav/>
         <Routes>
-          <Route path={'/chess'} element={<Chess />} />
-          <Route path={'/word'} element={<ArbitrarilyDrag />} />
-          <Route path={'/cardSort'} element={<CardSort />} />
-          <Route path={'/dragCardSort'} element={<CardAssemble />} />
-          <Route path={'/listSort'} element={<ListSort />} />
-          <Route path={'/dragPreviewImg'} element={<DragPreviewImg />} />
-          <Route path={'/'} element={<DragPreviewDom/>} />
+          {routes.map((each) => {
+            const { Component, url } = each;
+            return <Route path={url} key={url} element={<Component />} />;
+          })}
         </Routes>
       </Router>
     </div>
