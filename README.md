@@ -13,6 +13,9 @@ clone 下来之后
 
 在 components 目录下，每个文件夹代表一个用例，启动项目之后，通过路由进行访问
 
+- multiDrag: 批量拖拽，可以选择多个元素进行拖拽
+![](./src/assets/批量拖拽.gif)
+
 - word: 任意拖拽，记录坐标进行拖拽
 
 ![](./src/assets/任意拖拽.gif)
