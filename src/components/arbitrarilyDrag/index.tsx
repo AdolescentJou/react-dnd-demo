@@ -17,7 +17,7 @@ const WORDS = [
   },
   {
     text: 'forget',
-    type: WORD_TYPE.adj,
+    type: WORD_TYPE.verb,
   },
   {
     text: 'interested',

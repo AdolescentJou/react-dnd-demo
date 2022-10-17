@@ -1,6 +1,6 @@
 import { CSSProperties, FC, useRef, useState } from 'react';
 import { useDrag, DragPreviewImage } from 'react-dnd';
-import yanlingji from '../../assets/yanlingji.png';
+import apple from '../../assets/apple.png';
 
 const DragPreviewImg = () => {
   const [{ isDragging }, drag, preview] = useDrag({
@@ -12,7 +12,7 @@ const DragPreviewImg = () => {
 
   return (
     <>
-      <DragPreviewImage connect={preview} src={yanlingji} />
+      <DragPreviewImage connect={preview} src={apple} />
       <div
         className='card_drag'
         ref={drag}
@@ -20,7 +20,7 @@ const DragPreviewImg = () => {
           opacity: isDragging ? 0.5 : 1,
         }}
       >
-        drag item prview Img
+        drag item prview an apple
       </div>
     </>
   );
