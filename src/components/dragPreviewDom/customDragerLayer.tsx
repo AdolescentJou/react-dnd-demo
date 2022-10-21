@@ -18,7 +18,11 @@ const layerStyles: CSSProperties = {
   // height: '100%',
 };
 
-function getItemStyles(initialOffset: XYCoord | null, currentOffset: XYCoord | null, isSnapToGrid: boolean) {
+function getItemStyles(
+  initialOffset: XYCoord | null,
+  currentOffset: XYCoord | null,
+  isSnapToGrid: boolean
+) {
   if (!initialOffset || !currentOffset) {
     return {
       display: 'none',
@@ -43,18 +47,19 @@ function getItemStyles(initialOffset: XYCoord | null, currentOffset: XYCoord | n
 }
 
 export const CustomDragLayer = (props: any) => {
-  const { itemType, isDragging, item, initialOffset, currentOffset } = useDragLayer((monitor) => ({
-    item: monitor.getItem(),
-    itemType: monitor.getItemType(),
-    initialOffset: monitor.getInitialSourceClientOffset(),
-    currentOffset: monitor.getSourceClientOffset(),
-    isDragging: monitor.isDragging(),
-  }));
+  const { itemType, isDragging, item, initialOffset, currentOffset } =
+    useDragLayer((monitor) => ({
+      item: monitor.getItem(),
+      itemType: monitor.getItemType(),
+      initialOffset: monitor.getInitialSourceClientOffset(),
+      currentOffset: monitor.getSourceClientOffset(),
+      isDragging: monitor.isDragging(),
+    }));
 
   function renderItem() {
     switch (itemType) {
       case 'DragDropBox':
-        return <div className='card_drag'>这里是预览样式</div>;
+        return <div className="card_drag">这里是预览样式</div>;
       default:
         return null;
     }
@@ -63,10 +68,14 @@ export const CustomDragLayer = (props: any) => {
   if (!isDragging) {
     return null;
   }
-  
+
   return (
     <div style={layerStyles}>
-      <div style={getItemStyles(initialOffset, currentOffset, props.snapToGrid)}>{renderItem()}</div>
+      <div
+        style={getItemStyles(initialOffset, currentOffset, props.snapToGrid)}
+      >
+        {renderItem()}
+      </div>
     </div>
   );
 };

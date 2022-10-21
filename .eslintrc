@@ -1,0 +1,47 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["jest", "@typescript-eslint"], 
+  "extends": ["react-app", "react-app/jest", "plugin:prettier/recommended"],// 关闭prettier和eslint有冲突的规则，没有定义的规则以prettiew为准
+  "rules": {
+    "linebreak-style": [0, "error", "windows"],
+    "@typescript-eslint/no-explicit-any": [0],
+    "@typescript-eslint/no-empty-function": [0],
+    "@typescript-eslint/no-empty-interface": [0],
+    "@typescript-eslint/no-unused-vars": [0],
+    "@typescript-eslint/no-use-before-define": [0],
+    "@typescript-eslint/explicit-member-accessibility": [0],
+    "@typescript-eslint/no-var-requires": [0],
+    "@typescript-eslint/no-non-null-assertion": [0],
+    "@typescript-eslint/explicit-function-return-type": [0],
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/no-this-alias": "off",
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 5 }],
+    "camelcase": [0],
+    "@typescript-eslint/camelcase": [0],
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/function-paren-newline": "off",
+    "nonblock-statement-body-position": "off",
+    "dot-notation": [0, { "allowKeywords": true }],
+    "arrow-parens": 0
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "prefer-const": [0],
+        "no-var": [2],
+        "no-constant-condition": [0],
+        "camelcase": [0],
+        "@typescript-eslint/camelcase": [0],
+        "function-paren-newline": "off"
+      }
+    }
+  ]
+}
